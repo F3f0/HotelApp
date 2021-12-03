@@ -1,0 +1,3 @@
+Room01, Normal, 1000, true
+Room02, Luxury, 1500, true
+Room03, Suite, 2000, true
