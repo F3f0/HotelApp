@@ -15,7 +15,6 @@ public class Booking {
             while (scan.hasNext()) {
                 firstLine = scan.nextLine() ;
                 firstLineSplitted = firstLine.split(",") ;
-                System.out.println(firstLineSplitted[0].trim());
                 Room room = new Room(firstLineSplitted[0].trim(), firstLineSplitted[1].trim(),
                         Integer.parseInt(firstLineSplitted[2].trim()),
                         Boolean.parseBoolean(firstLineSplitted[3].trim())) ;

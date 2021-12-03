@@ -38,11 +38,11 @@ public class Room {
 
     @Override
     public String toString() {
-        return "Room{" +
-                "nameOfRoom='" + nameOfRoom + '\'' +
-                ", typeOfRoom='" + typeOfRoom + '\'' +
-                ", priceOfRoom=" + priceOfRoom +
-                ", availabilityOfRoom=" + availabilityOfRoom +
-                '}';
+        return "\nRooms: \n" +
+                "Room: '" + nameOfRoom + '\'' +
+                ", Type of the room: '" + typeOfRoom + '\'' +
+                ", Price of the room: " + priceOfRoom +
+                ", Availability: " + availabilityOfRoom +
+                "\n";
     }
 }
