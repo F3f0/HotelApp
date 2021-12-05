@@ -1,0 +1,11 @@
+RoomID;Price;Type;isAvailable
+Room01;1000;Normal;true
+Room02;1000;Normal;true
+Room03;1000;Normal;true
+Room04;1000;Normal;true
+Room05;1000;Normal;true
+Room06;1500;Luxury;true
+Room07;1500;Luxury;true
+Room08;1500;Luxury;true
+Room09;2000;Suite;true
+Room10;2000;Suite;true
