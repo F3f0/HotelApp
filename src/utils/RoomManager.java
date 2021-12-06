@@ -1,16 +1,20 @@
 package utils;
 
-import data.model.Room;
-import data.model.RoomLuxury;
-import data.model.RoomNormalDouble;
-import data.model.RoomSuite;
+import data.model.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class RoomManager {
 
-    public List<RoomNormalDouble> getNormalRooms(List<Room> menu){
+    public List<RoomNormalSingle> getNormalRoomsSingle(List<Room> menu){
+        return  menu.stream()
+                .filter(item -> item instanceof RoomNormalSingle)
+                .map(item -> (RoomNormalSingle) item)
+                .collect(Collectors.toList());
+    }
+
+    public List<RoomNormalDouble> getNormalRoomsDouble(List<Room> menu){
         return  menu.stream()
                 .filter(item -> item instanceof RoomNormalDouble)
                 .map(item -> (RoomNormalDouble) item)

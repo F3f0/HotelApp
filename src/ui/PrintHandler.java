@@ -12,12 +12,13 @@ public class PrintHandler implements PrintListener{
         System.out.println("""
                 choose an option:
                 (0) exit
-                (1) print all rooms
-                (2) print normal rooms
-                (3) print luxury rooms
-                (4) print suite rooms
-                (5) delete item (by name)
-                (6) save""");
+                (1) print All Rooms
+                (2) print Normal Single Rooms
+                (3) print Normal Double Rooms
+                (4) print Luxury Rooms
+                (5) print Suite Rooms
+                (6) delete item (by name)
+                (7) save""");
     }
 
     @Override

@@ -1,10 +1,7 @@
 import data.DataManager;
 import data.EventHandler;
 import data.FileManager;
-import data.model.Room;
-import data.model.RoomLuxury;
-import data.model.RoomNormalDouble;
-import data.model.RoomSuite;
+import data.model.*;
 import ui.PrintHandler;
 import ui.PrintListener;
 import utils.DataConverter;
@@ -40,11 +37,12 @@ public class Controller implements EventHandler {
     private void onOptionSelected(int option) {
         switch (option) {
             case 1 -> printAllRooms();
-            case 2 -> printNormalRooms();
-            case 3 -> printLuxuryRooms();
-            case 4 -> printSuiteRooms();
-            case 5 -> deleteBooking();
-            case 6 -> saveRooms();
+            case 2 -> printNormalSingleRooms();
+            case 3 -> printNormalDoubleRooms();
+            case 4 -> printLuxuryRooms();
+            case 5 -> printSuiteRooms();
+            case 6 -> deleteBooking();
+            case 7 -> saveRooms();
             default -> handleError();
         }
     }
@@ -70,15 +68,28 @@ public class Controller implements EventHandler {
     }
 
     private void printAllRooms() {
-        printNormalRooms();
+        printNormalSingleRooms();
+        printNormalDoubleRooms();
         printLuxuryRooms();
         printSuiteRooms();
     }
 
-    private void printNormalRooms() {
-        List<RoomNormalDouble> normalRooms = roomManager.getNormalRooms(rooms);
+    private void printNormalSingleRooms() {
+        List<RoomNormalSingle> normalSingleRooms = roomManager.getNormalRoomsSingle(rooms);
+        for (RoomNormalSingle item :
+                normalSingleRooms) {
+            printListener.printRoomList(
+                    item.getRoomID(),
+                    String.valueOf(item.getPrice()),
+                    item.getRoomType()
+            );
+        }
+    }
+
+    private void printNormalDoubleRooms() {
+        List<RoomNormalDouble> normalDoubleRooms = roomManager.getNormalRoomsDouble(rooms);
         for (RoomNormalDouble item :
-                normalRooms) {
+                normalDoubleRooms) {
             printListener.printRoomList(
                     item.getRoomID(),
                     String.valueOf(item.getPrice()),
