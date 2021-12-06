@@ -21,7 +21,7 @@ public class DataConverter {
             Room currentRoom = null;
 
             if (roomText[2].equalsIgnoreCase(ROOM_TYPE_NORMAL_SINGLE)) {
-                currentRoom = new RoomNormalDouble(roomText[0], Integer.parseInt(roomText[1]), roomText[2]);
+                currentRoom = new RoomNormalSingle(roomText[0], Integer.parseInt(roomText[1]), roomText[2]);
             } else if (roomText[2].equalsIgnoreCase(ROOM_TYPE_NORMAL_DOUBLE)) {
                 currentRoom = new RoomNormalDouble(roomText[0], Integer.parseInt(roomText[1]), roomText[2]);
             } else if (roomText[2].equalsIgnoreCase(ROOM_TYPE_LUXURY)) {
