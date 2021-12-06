@@ -1,9 +1,6 @@
 package utils;
 
-import data.model.Room;
-import data.model.RoomLuxury;
-import data.model.RoomNormal;
-import data.model.RoomSuite;
+import data.model.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,8 +20,10 @@ public class DataConverter {
 
             Room currentRoom = null;
 
-            if (roomText[2].equalsIgnoreCase(ROOM_TYPE_NORMAL)) {
-                currentRoom = new RoomNormal(roomText[0], Integer.parseInt(roomText[1]), roomText[2]);
+            if (roomText[2].equalsIgnoreCase(ROOM_TYPE_NORMAL_SINGLE)) {
+                currentRoom = new RoomNormalDouble(roomText[0], Integer.parseInt(roomText[1]), roomText[2]);
+            } else if (roomText[2].equalsIgnoreCase(ROOM_TYPE_NORMAL_DOUBLE)) {
+                currentRoom = new RoomNormalDouble(roomText[0], Integer.parseInt(roomText[1]), roomText[2]);
             } else if (roomText[2].equalsIgnoreCase(ROOM_TYPE_LUXURY)) {
                 currentRoom = new RoomLuxury(roomText[0],Integer.parseInt(roomText[1]), roomText[2]) ;
             } else if (roomText[2].equalsIgnoreCase(ROOM_TYPE_SUITE)) {
@@ -43,9 +42,13 @@ public class DataConverter {
         String line = null;
         for (Room room :
                 rooms) {
-            if (room instanceof RoomNormal) {
+            if (room instanceof RoomNormalSingle) {
                 line = room.getRoomID() + "," + room.getPrice() + ";" +
-                        ((RoomNormal) room).getPrice() + ";" + ROOM_TYPE_NORMAL ;
+                        ((RoomNormalSingle) room).getPrice() + ";" + ROOM_TYPE_NORMAL_SINGLE;
+            }
+            if (room instanceof RoomNormalDouble) {
+                line = room.getRoomID() + "," + room.getPrice() + ";" +
+                        ((RoomNormalDouble) room).getPrice() + ";" + ROOM_TYPE_NORMAL_DOUBLE;
             }
             if(line != null){
                 result.append("\n").append(line);

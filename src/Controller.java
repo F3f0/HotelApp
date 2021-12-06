@@ -3,7 +3,7 @@ import data.EventHandler;
 import data.FileManager;
 import data.model.Room;
 import data.model.RoomLuxury;
-import data.model.RoomNormal;
+import data.model.RoomNormalDouble;
 import data.model.RoomSuite;
 import ui.PrintHandler;
 import ui.PrintListener;
@@ -76,8 +76,8 @@ public class Controller implements EventHandler {
     }
 
     private void printNormalRooms() {
-        List<RoomNormal> normalRooms = roomManager.getNormalRooms(rooms);
-        for (RoomNormal item :
+        List<RoomNormalDouble> normalRooms = roomManager.getNormalRooms(rooms);
+        for (RoomNormalDouble item :
                 normalRooms) {
             printListener.printRoomList(
                     item.getRoomID(),

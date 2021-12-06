@@ -3,7 +3,8 @@ package utils;
 public class Constants {
 
     public static final String SPLIT_REGEX = ";";
-    public static final String ROOM_TYPE_NORMAL = "Normal";
+    public static final String ROOM_TYPE_NORMAL_SINGLE = "NormalSingle";
+    public static final String ROOM_TYPE_NORMAL_DOUBLE = "NormalDouble";
     public static final String ROOM_TYPE_LUXURY = "Luxury";
     public static final String ROOM_TYPE_SUITE = "Suite";
     public static final String AC = "ac";

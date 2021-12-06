@@ -2,7 +2,7 @@ package utils;
 
 import data.model.Room;
 import data.model.RoomLuxury;
-import data.model.RoomNormal;
+import data.model.RoomNormalDouble;
 import data.model.RoomSuite;
 
 import java.util.List;
@@ -10,10 +10,10 @@ import java.util.stream.Collectors;
 
 public class RoomManager {
 
-    public List<RoomNormal> getNormalRooms(List<Room> menu){
+    public List<RoomNormalDouble> getNormalRooms(List<Room> menu){
         return  menu.stream()
-                .filter(item -> item instanceof RoomNormal)
-                .map(item -> (RoomNormal) item)
+                .filter(item -> item instanceof RoomNormalDouble)
+                .map(item -> (RoomNormalDouble) item)
                 .collect(Collectors.toList());
     }
 

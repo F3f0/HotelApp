@@ -1,11 +1,11 @@
 package data.model;
 
-public class RoomSuite extends Room{
-    private String roomType ;
+public class RoomNormalDouble extends Room{
+
+    private String roomType;
     private int capacity;
 
-
-    public RoomSuite (String roomID, int price, String roomType) {
+    public RoomNormalDouble(String roomID, int price, String roomType) {
         super(roomID, price);
         this.roomType = roomType;
         this.capacity = 2;
